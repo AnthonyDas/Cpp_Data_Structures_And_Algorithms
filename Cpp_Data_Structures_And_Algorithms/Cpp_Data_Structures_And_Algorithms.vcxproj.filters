@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Chapter 2 - Linked Lists">
+      <UniqueIdentifier>{d9c4bc46-75dc-484b-9ecf-ef00e5e13b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter 3 - Stacks and Queues">
+      <UniqueIdentifier>{0390a1d7-2b6b-4ec8-87fb-352247aa2723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chapter 3 - Stacks and Queues">
+      <UniqueIdentifier>{9b32d589-7550-4d92-92df-9732c0d21068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter 4 - Sorting">
+      <UniqueIdentifier>{59813fc3-9e8a-41a5-836a-b58aea2fd43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter 5 - Searching">
+      <UniqueIdentifier>{7805c4ab-597d-4562-83ef-b49f9197baba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chapter 4 - Sorting">
+      <UniqueIdentifier>{192a8f0d-bf12-4a86-9dd6-17c5d28bbe6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chapter 5 - Searching">
+      <UniqueIdentifier>{bf783b83-c0a6-4783-b567-ce7c3c111ccc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chapter 2 - Linked Lists">
+      <UniqueIdentifier>{8f365c9e-75f5-4eb8-9f8d-7138900dd5b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>Source Files\Chapter 2 - Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="DoublyLinkedList.cpp">
+      <Filter>Source Files\Chapter 2 - Linked Lists</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClCompile>
+    <ClCompile Include="Parenthesis_Validity.cpp">
+      <Filter>Source Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClCompile>
+    <ClCompile Include="Deque.cpp">
+      <Filter>Source Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>Source Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClCompile>
+    <ClCompile Include="Selection_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Merge_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Bubble_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Counting_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Insertion_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Quick_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Radix_Sort.cpp">
+      <Filter>Source Files\Chapter 4 - Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ternary_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Binary_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Interpolation_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Jump_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Linear_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Sublist_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+    <ClCompile Include="Exponential_Search.cpp">
+      <Filter>Source Files\Chapter 5 - Searching</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\LinkedList.h">
+      <Filter>Header Files\Chapter 2 - Linked Lists</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Node.h">
+      <Filter>Header Files\Chapter 2 - Linked Lists</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DoublyLinkedList.h">
+      <Filter>Header Files\Chapter 2 - Linked Lists</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DoublyNode.h">
+      <Filter>Header Files\Chapter 2 - Linked Lists</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Stack.h">
+      <Filter>Header Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Deque.h">
+      <Filter>Header Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Queue.h">
+      <Filter>Header Files\Chapter 3 - Stacks and Queues</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Swap.h">
+      <Filter>Header Files\Chapter 4 - Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Binary_Search.h">
+      <Filter>Header Files\Chapter 5 - Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Linear_Search.h">
+      <Filter>Header Files\Chapter 5 - Searching</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
