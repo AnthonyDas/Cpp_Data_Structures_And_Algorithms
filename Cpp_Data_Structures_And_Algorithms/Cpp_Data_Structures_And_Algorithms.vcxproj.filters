@@ -37,6 +37,24 @@
     <Filter Include="Header Files\Chapter 2 - Linked Lists">
       <UniqueIdentifier>{8f365c9e-75f5-4eb8-9f8d-7138900dd5b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Chapter 6 - Strings">
+      <UniqueIdentifier>{c2d558b2-f90b-481c-89de-66d82c5c4b29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter 7 - Trees">
+      <UniqueIdentifier>{01808629-395d-4ce5-a796-b3dc30e0c4d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chapter 7 - Trees">
+      <UniqueIdentifier>{56fff584-a210-49b4-9256-34809eda7300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter 8 - Hash Tables">
+      <UniqueIdentifier>{f92b2372-9d13-4fc1-8115-913aa9372555}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Chapter 8 - Hash Tables">
+      <UniqueIdentifier>{62e1cd1a-cfc0-48cd-9a0f-c3ad8a6a220c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter 9 - Other Algorithmns">
+      <UniqueIdentifier>{ef251453-68a3-4bfc-90c2-acf3cb13ac61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.cpp">
@@ -99,6 +117,48 @@
     <ClCompile Include="Exponential_Search.cpp">
       <Filter>Source Files\Chapter 5 - Searching</Filter>
     </ClCompile>
+    <ClCompile Include="Anagram.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryString_To_Decimal.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Decimal_To_BinaryString.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Palindrome.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Searching.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Subsequence_Generator.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Subsequence_String.cpp">
+      <Filter>Source Files\Chapter 6 - Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="BST.cpp">
+      <Filter>Source Files\Chapter 7 - Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="AVL.cpp">
+      <Filter>Source Files\Chapter 7 - Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryHeap.cpp">
+      <Filter>Source Files\Chapter 7 - Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTableSeparateChaining.cpp">
+      <Filter>Source Files\Chapter 8 - Hash Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTableOpenAddressing.cpp">
+      <Filter>Source Files\Chapter 8 - Hash Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="CAPTCHA.cpp">
+      <Filter>Source Files\Chapter 9 - Other Algorithmns</Filter>
+    </ClCompile>
+    <ClCompile Include="HuffmanCompression.cpp">
+      <Filter>Source Files\Chapter 9 - Other Algorithmns</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\LinkedList.h">
@@ -130,6 +190,27 @@
     </ClInclude>
     <ClInclude Include="include\Linear_Search.h">
       <Filter>Header Files\Chapter 5 - Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BSTNode.h">
+      <Filter>Header Files\Chapter 7 - Trees</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BST.h">
+      <Filter>Header Files\Chapter 7 - Trees</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AVL.h">
+      <Filter>Header Files\Chapter 7 - Trees</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BinaryHeap.h">
+      <Filter>Header Files\Chapter 7 - Trees</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HashTableSeparateChaining.h">
+      <Filter>Header Files\Chapter 8 - Hash Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HashTableOpenAddressing.h">
+      <Filter>Header Files\Chapter 8 - Hash Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HashElement.h">
+      <Filter>Header Files\Chapter 8 - Hash Tables</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

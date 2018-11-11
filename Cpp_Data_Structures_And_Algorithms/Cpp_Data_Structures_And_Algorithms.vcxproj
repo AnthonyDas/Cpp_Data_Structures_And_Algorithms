@@ -117,32 +117,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Anagram.cpp" />
+    <ClCompile Include="AVL.cpp" />
+    <ClCompile Include="BinaryHeap.cpp" />
+    <ClCompile Include="BinaryString_To_Decimal.cpp" />
     <ClCompile Include="Binary_Search.cpp" />
+    <ClCompile Include="BST.cpp" />
     <ClCompile Include="Bubble_Sort.cpp" />
+    <ClCompile Include="CAPTCHA.cpp" />
     <ClCompile Include="Counting_Sort.cpp" />
+    <ClCompile Include="Decimal_To_BinaryString.cpp" />
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="DoublyLinkedList.cpp" />
     <ClCompile Include="Exponential_Search.cpp" />
+    <ClCompile Include="HashTableOpenAddressing.cpp" />
+    <ClCompile Include="HashTableSeparateChaining.cpp" />
+    <ClCompile Include="HuffmanCompression.cpp" />
     <ClCompile Include="Insertion_Sort.cpp" />
     <ClCompile Include="Interpolation_Search.cpp" />
     <ClCompile Include="Jump_Search.cpp" />
     <ClCompile Include="Linear_Search.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Merge_Sort.cpp" />
+    <ClCompile Include="Palindrome.cpp" />
     <ClCompile Include="Parenthesis_Validity.cpp" />
+    <ClCompile Include="Pattern_Searching.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Quick_Sort.cpp" />
     <ClCompile Include="Radix_Sort.cpp" />
     <ClCompile Include="Selection_Sort.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Sublist_Search.cpp" />
+    <ClCompile Include="Subsequence_Generator.cpp" />
+    <ClCompile Include="Subsequence_String.cpp" />
     <ClCompile Include="Ternary_Search.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AVL.h" />
+    <ClInclude Include="include\BinaryHeap.h" />
     <ClInclude Include="include\Binary_Search.h" />
+    <ClInclude Include="include\BST.h" />
+    <ClInclude Include="include\BSTNode.h" />
     <ClInclude Include="include\Deque.h" />
     <ClInclude Include="include\DoublyLinkedList.h" />
     <ClInclude Include="include\DoublyNode.h" />
+    <ClInclude Include="include\HashElement.h" />
+    <ClInclude Include="include\HashTableOpenAddressing.h" />
+    <ClInclude Include="include\HashTableSeparateChaining.h" />
     <ClInclude Include="include\Linear_Search.h" />
     <ClInclude Include="include\LinkedList.h" />
     <ClInclude Include="include\Node.h" />
