@@ -17,4 +17,4 @@ There are also times when the author doesn’t quite seem to understand what’s
 
 Chapter 9 is incomplete both in terms of content (“We will now show”… but then the section abruptly ends) and in terms of presentation (e.g. the font will randomly change in places). There’s a brief introduction for a linear congruential generator but with a = 1 and m = 10. Why couldn’t some proper values be used instead?
 
-I could go on but I’ve made my point. I did learn how to balance a binary search tree and a new sorting algorithm (radix), so the text did expand my knowledge. I also commend the author for at least trying to produce a text and help the community. But overall, I wouldn’t recommend.
+I could go on but I’ve made my point. I did learn how to balance a binary search tree and a new sorting algorithm (radix), so the text did expand my knowledge. I also commend the author for at least trying to produce a text and help the community. But overall, I wouldn’t recommend as there are surely better texts out there. Even putting aside the monetary cost of the text, you will waste time trying to understand the author's use of English.
