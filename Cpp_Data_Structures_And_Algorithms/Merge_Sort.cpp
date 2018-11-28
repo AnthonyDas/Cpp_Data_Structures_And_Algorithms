@@ -1,22 +1,21 @@
-void Merge(int arr[], int startIndex, int middleIndex, int endIndex) {
-	// Number of elements that will be sorted
-	// from startIndex to endIndex inclusive
-	int totalElements = endIndex - startIndex + 1;
+void Merge(int arr[], const int &start, const int &mid, const int &end) {
+	// Total elements to sort, start to end inclusive
+	const int totalElements = end - start + 1;
 
-	// Temporary array to store merged array
+	// Temporary array to store (sorted) merged array
 	int * tempArray = new int[totalElements];
 
-	// Index of left subarray arr[startIndex, ..., middleIndex]
-	int leftIndex = startIndex;
+	// Left subarray index arr[start, ..., mid]
+	int leftIndex = start;
 
-	// Index of right subarray arr[middleIndex + 1, ..., endIndex]
-	int rightIndex = middleIndex + 1;
+	// Right subarray index arr[(mid + 1), ..., end]
+	int rightIndex = mid + 1;
 
-	// Index of merged array
+	// Index in (sorted) merged array
 	int mergedIndex = 0;
 
 	// Merge the two subarrays
-	while (leftIndex <= middleIndex && rightIndex <= endIndex) {
+	while (leftIndex <= mid && rightIndex <= end) {
 		if (arr[leftIndex] <= arr[rightIndex]) {
 			tempArray[mergedIndex] = arr[leftIndex];
 			++leftIndex;
@@ -26,60 +25,44 @@ void Merge(int arr[], int startIndex, int middleIndex, int endIndex) {
 			++rightIndex;
 		}
 
-		// Go to next merged array index
 		++mergedIndex;
 	}
 
-	// If there're any remaining element in left subarray
-	// that is not stored to merged array yet
-	while (leftIndex <= middleIndex) {
+	// Move any remaining left subarray elements to merged array
+	while (leftIndex <= mid) {
 		tempArray[mergedIndex] = arr[leftIndex];
-
-		// Go to next left subarray index
 		++leftIndex;
-
-		// Go to next merged array index
 		++mergedIndex;
 	}
 
-	// If there're any remaining element in right subarray
-	// that is not stored to merged array yet
-	while (rightIndex <= endIndex) {
+	// Move any remaining right subarray elements to merged array
+	while (rightIndex <= end) {
 		tempArray[mergedIndex] = arr[rightIndex];
-
-		// Go to next right subarray index
 		++rightIndex;
-
-		// Go to next merged array index
 		++mergedIndex;
 	}
 
-	// Now, the merged array has been sorted
-	// Copy the elements to the original array
+	// Copy the elements back in to the original array
 	for (int i = 0; i < totalElements; ++i) {
-		arr[startIndex + i] = tempArray[i];
+		arr[start + i] = tempArray[i];
 	}
 
-	// Remove the temporary array tempArray
 	delete[] tempArray;
 }
 
-void MergeSort(int arr[], int startIndex, int endIndex) {
-	// Only perform sort process
-	// if the end index is higher than start index
-	if (startIndex < endIndex) {
-		// Find middle index
-		int middleIndex = (startIndex + endIndex) / 2;
+void MergeSort(int arr[], const int &start, const int &end) {
+	// Only makes sense to sort >1 element
+	if (start < end) {
 
-		// Sort left subarray
-		// arr[startIndex ... middleIndex]
-		MergeSort(arr, startIndex, middleIndex);
+		const int mid = (start + end) / 2;
 
-		// Sort right subarray
-		// arr[middleIndex + 1 ... endIndex]
-		MergeSort(arr, middleIndex + 1, endIndex);
+		// Sort left subarray arr[start, ..., mid]
+		MergeSort(arr, start, mid);
 
-		// Merge the left and the right subarray
-		Merge(arr, startIndex, middleIndex, endIndex);
+		// Sort right subarray arr[(mid + 1), ..., end]
+		MergeSort(arr, (mid + 1), end);
+
+		// Merge subarrays
+		Merge(arr, start, mid, end);
 	}
 }

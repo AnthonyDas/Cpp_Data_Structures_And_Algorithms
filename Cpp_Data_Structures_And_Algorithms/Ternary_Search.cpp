@@ -1,5 +1,5 @@
 int Ternary_Search(int arr[], int start, int end, int val) {
-	// Only process if end index is >= start index
+	// Only process if start index <= end index
 	if (start <= end) {
 
 		const int midLeft = start + (end - start) / 3;

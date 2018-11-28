@@ -1,5 +1,5 @@
 int Binary_Search(int arr[], const int &start, const int &end, const int &val) {
-	// Only process if end index is >= start index
+	// Only process if start index <= end index
 	if (start <= end) {
 		const int mid = start + (end - start) / 2;
 

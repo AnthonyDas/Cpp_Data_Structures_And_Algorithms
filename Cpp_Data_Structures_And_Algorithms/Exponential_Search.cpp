@@ -7,7 +7,8 @@ int Exponential_Search(int arr[], const int & arrSize, const int &val) {
         return -1;
     }
 
-    // Start comparing from index 1
+    // Start comparing from index 1.
+	// Will multiply by 2, so cannot start from zero
     int blockIndex = 1;
 
     // Increase blockIndex exponentially if:

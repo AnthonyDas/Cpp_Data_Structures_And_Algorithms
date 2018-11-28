@@ -1,5 +1,5 @@
 #include <cmath> // sqrt
-#include <algorithm> // min
+#include <algorithm> // min, max
 #include "Linear_Search.h"
 
 int Jump_Search(int arr[], const int &arrSize, const int &val) {
@@ -21,6 +21,5 @@ int Jump_Search(int arr[], const int &arrSize, const int &val) {
 
 	// BlockIndex will be pass the target, so perfom Linear Search
 	// on the sub array starting at (blockIndex - step)
-    // arr[(blockIndex - step), ..., (blockIndex or arrSize)]
-    return Linear_Search(arr, (blockIndex - step), std::min(blockIndex, arrSize), val);
+    return Linear_Search(arr, std::max(blockIndex - step, 0), std::min(blockIndex, arrSize), val);
 }

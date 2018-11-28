@@ -20,8 +20,6 @@ void Counting_Sort(int arr[], const int &arrSize) {
 			arr[index] = i;
 
 			++index;
-
-			// Decrease counter by 1
 			--countsArray[i];
 		}
 	}

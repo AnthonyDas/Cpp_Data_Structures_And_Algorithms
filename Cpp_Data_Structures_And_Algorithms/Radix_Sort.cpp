@@ -1,38 +1,34 @@
-#include "Queue.h"
+#include <algorithm> // max
+#include <queue>
 
-void RadixSort(int arr[], int arrSize) {
-	// Create ten buckets for each digits (0 - 9)
-	Queue<int> * buckets = new Queue<int>[10];
+void RadixSort(int arr[], const int &arrSize) {
+	// Create ten buckets for digits 0 - 9
+	std::queue<int> buckets[10];
 
 	// Find the largest element
-	int largestElement = arr[0];
+	int largest = arr[0];
 	for (int i = 0; i < arrSize; ++i) {
-		if (largestElement < arr[i])
-			largestElement = arr[i];
+		largest = std::max(largest, arr[i]);
 	}
 
-	// Iterate through every digit
-	// using exponetial (10^exp) to find the digit
-	for (int exp = 1; largestElement / exp > 0; exp *= 10) {
-		// Iterate the array's elements
+	// Iterate through every digit using exponetial
+	// (10^exp) to find the next digit
+	for (int exp = 1; largest / exp > 0; exp *= 10) {
+		// Iterate through array moving element into respective bucket
 		for (int i = 0; i < arrSize; ++i) {
-			// Move element into respective bucket
-			buckets[(arr[i] / exp) % 10].Enqueue(arr[i]);
+			buckets[(arr[i] / exp) % 10].push(arr[i]); // enqueue
 		}
 
 		// Reconstruct the array starting from
-		// the smallest digit in the buckets
-		// Reset the array counter before reconstructing
-		int arrCounter = 0;
+		// the smallest digit bucket
+		int index = 0;
 		for (int i = 0; i < 10; ++i) {
-			// Get all elements from the buckets
-			while (!buckets[i].IsEmpty()) {
-				// Get the front element
-				// then restore element to array
-				arr[arrCounter++] = buckets[i].Front();
+			while (!buckets[i].empty()) {
+				arr[index] = buckets[i].front();
 
-				// Remove the front element
-				buckets[i].Dequeue();
+				buckets[i].pop(); // dequeue
+
+				++index;
 			}
 		}
 	}

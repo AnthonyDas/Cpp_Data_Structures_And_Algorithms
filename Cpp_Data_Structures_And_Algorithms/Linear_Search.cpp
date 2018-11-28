@@ -1,5 +1,6 @@
-int Linear_Search(int arr[], const int &startIndex, const int &endIndex, const int &val) {
-	for (int i = startIndex; i < endIndex; ++i) {
+int Linear_Search(int arr[], const int &start, const int &end, const int &val) {
+	// Only process if start index <= end index
+	for (int i = start; i <= end; ++i) {
 		if (arr[i] == val) {
 			return i;
 		}

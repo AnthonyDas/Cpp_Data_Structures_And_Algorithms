@@ -1,55 +1,43 @@
 #include "Swap.h"
 
-int Partition(int arr[], int startIndex, int endIndex) {
-	// Set the first item as pivot
-	int pivot = arr[startIndex];
+int Partition(int arr[], const int &start, const int &end) {
+	// Set the first element as pivot
+	const int pivotValue = arr[start];
 
-	// Left sublist and right sublist
-	// are initially empty
-	int middleIndex = startIndex;
+	// mid is index of last left subarray element
+	int mid = start;
 
-	// Iterate through arr[1 ... n - 1]
-	for (int i = startIndex + 1; i <= endIndex; ++i) {
-		if (arr[i] < pivot) {
-			// the current item is on the left sublist
-			// prepare a seat by shifting middle index
-			++middleIndex;
+	for (int i = (start + 1); i <= end; ++i) {
+		if (arr[i] < pivotValue) {
+			// Current item is in left subarray - shift mid index
+			++mid;
 
-			// the arr[middleIndex] is
-			// the member of right sublist,
-			// swap it to the current item which is
-			// member of left list
-			swap(arr[i], arr[middleIndex]);
+			// arr[mid] is currently member of right subarray, swap
+			// it with current element which is member of left subarray
+			swap(arr[i], arr[mid]);
 		}
 	}
 
-	// By now, the arr[middleIndex] item is
-	// member of left sublist.
-	// We can swap it with the pivot
-	// so the pivot will be in the correct position
-	// which is between left sublist and right sublist
-	swap(arr[startIndex], arr[middleIndex]);
+	// By now, arr[mid] is member of left subarray.
+	// Swap it with pivot so the pivot will be in the correct
+	// position in between left subarray and right subarray.
+	swap(arr[start], arr[mid]);
 
-	// return the index of pivot
-	// to be used by next quick sort
-	return middleIndex;
+	// Return index of pivot needed by next quick sort
+	return mid;
 }
 
-void QuickSort(int arr[], int startIndex, int endIndex) {
-	// Only perform sort process
-	// if the end index is higher than start index
-	if (startIndex < endIndex) {
-		// Retrieve pivot position from Partition() function
-		// This pivotIndex is the index of element that is already
-		// in correct position
-		int pivotIndex = Partition(arr, startIndex, endIndex);
+void QuickSort(int arr[], const int &start, const int &end) {
+	// Only makes sense to sort >1 element
+	if (start < end) {
 
-		// Sort left sublist
-		// arr[startIndex ... pivotIndex - 1]
-		QuickSort(arr, startIndex, pivotIndex - 1);
+		// PivotIndex is index of element already in correct position
+		const int pivotIndex = Partition(arr, start, end);
 
-		// Sort right sublist
-		// arr[pivotIndex + 1 ... endIndex]
-		QuickSort(arr, pivotIndex + 1, endIndex);
+		// Sort left subarray arr[start, ..., (pivotIndex - 1)]
+		QuickSort(arr, start, (pivotIndex - 1));
+
+		// Sort right subarray arr[(pivotIndex + 1), ..., end]
+		QuickSort(arr, (pivotIndex + 1), end);
 	}
 }
