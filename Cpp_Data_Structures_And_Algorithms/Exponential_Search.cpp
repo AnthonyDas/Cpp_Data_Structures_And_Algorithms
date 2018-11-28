@@ -1,9 +1,8 @@
 #include <algorithm> // min
 #include "Binary_Search.h"
 
-int Exponential_Search(int arr[], int arrSize, int val) {
-    // It's impossible to search value
-    // in array contains zero or less element
+int Exponential_Search(int arr[], const int & arrSize, const int &val) {
+    // Impossible to search over empty arr
     if (arrSize <= 0) {
         return -1;
     }
@@ -11,17 +10,15 @@ int Exponential_Search(int arr[], int arrSize, int val) {
     // Start comparing from index 1
     int blockIndex = 1;
 
-    // Increase the blockIndex exponentially
-    // if blockIndex is lower than array size
-    // and the value of element in blockIndex
-    // is still lower than searched value
+    // Increase blockIndex exponentially if:
+	// - lower than array size, and
+    // - element at blockIndex is smaller than target value
     while (blockIndex < arrSize && arr[blockIndex] < val) {
         blockIndex *= 2;
     }
 
-    // After find the blockIndex,
-    // perfom Binary Search to the sub array
-    // defined by the blockIndex
-    // arr[blockIndex / 2 .... blockIndex or arrSize]
+    // BlockIndex will be pass the target, so perfom Binary Search
+	// on the sub array starting at (blockIndex / 2)
+    // arr[(blockIndex / 2), ..., (blockIndex or arrSize)]
     return Binary_Search(arr, (blockIndex / 2), std::min(blockIndex, arrSize), val);
 }
