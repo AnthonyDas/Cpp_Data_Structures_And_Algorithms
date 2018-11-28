@@ -1,31 +1,28 @@
-void InsertionSort(int arr[], int arrSize) {
-	// Iterate to all array's element
-	for (int i = 0; i < arrSize; ++i) {
-		// Set the current element
-		// as reference value
+void InsertionSort(int arr[], const int &arrSize) {
+	// Start at second element
+	for (int i = 1; i < arrSize; ++i) {
+		// Set the current element as reference value
 		int refValue = arr[i];
 
-		// variable to shift the element
-		// to right position
+		// Index where refValue should be placed
 		int j;
 
-		// Iterate through the sorted element
-		// to insert the reference value
-		// in right position
+		// Iterate through the sorted elements to insert
+		// the reference value in correct position
 		for (j = (i - 1); j >= 0; --j) {
-			// if the value of the current index
-			// is greater than the reference value then
-			// move the current value to right side
-			// otherwise, put the reference value
-			// in the current index
-			if (arr[j] > refValue)
+			// If value at index j is greater than
+			// the reference value then shift it to
+			// the right. Otherwise, put the reference
+			// value at index (j + 1).
+			if (arr[j] > refValue) {
 				arr[j + 1] = arr[j];
-			else
+			}
+			else {
 				break;
+			}
 		}
 
-		// here's the line to put the reference value
-		// in the current index (the right position)
+		// Put reference value into sorted position
 		arr[j + 1] = refValue;
 	}
 }

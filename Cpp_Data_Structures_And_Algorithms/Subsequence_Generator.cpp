@@ -3,10 +3,8 @@
 #include <cmath> // pow
 
 std::vector<std::string> GenerateSubsequences(std::string str) {
-	// Return value
 	std::vector<std::string> vecString;
 
-	// Retrieve str length
 	const int strLen = str.size();
 
 	// bitCounter is used to check character position

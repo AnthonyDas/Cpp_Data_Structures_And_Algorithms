@@ -1,27 +1,30 @@
-void Counting_Sort(int arr[], int arrSize) {
-	// Create key/counting array
-	// with assumption that all element value
-	// are from 0 to 9
-	int counterSize = 10;
-	int* counterArray = new int[counterSize];
+void Counting_Sort(int arr[], const int &arrSize) {
+	// Assuming all element values
+	// are between 0 to 9 inclusive
+	const int range = 10;
 
-	// Increase the respective counter by 1
+	// Create key/counting array.
+	// Using new to allocate memory because in
+	// practice won't know range in advance.
+	int* countsArray = new int[range];
+
+	// Generate the counts for the input arr elements
 	for (int i = 0; i < arrSize; ++i) {
-		++counterArray[arr[i]];
+		++countsArray[arr[i]];
 	}
 
-	// Counter for iterating the arrCounter array
-	int arrCounter = 0;
+	int index = 0;
 
-	for (int i = 0; i < counterSize; ++i) {
-		while (counterArray[i] > 0) {
-			// Restore element to list
-			arr[arrCounter++] = i;
+	for (int i = 0; i < range; ++i) {
+		while (countsArray[i] > 0) {
+			arr[index] = i;
+
+			++index;
 
 			// Decrease counter by 1
-			--counterArray[i];
+			--countsArray[i];
 		}
 	}
 
-	delete[] counterArray;
+	delete[] countsArray;
 }

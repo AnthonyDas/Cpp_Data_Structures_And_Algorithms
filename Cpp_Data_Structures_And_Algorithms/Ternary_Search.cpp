@@ -1,44 +1,39 @@
-int Ternary_Search(int arr[], int startIndex, int endIndex, int val) {
-	// Only perform searching process
-	// if the end index is higher than
-	// or equals to start index
-	if (startIndex <= endIndex) {
-		// Find index of area of the first third
-		int middleLeftIndex = startIndex + (endIndex - startIndex) / 3;
+int Ternary_Search(int arr[], int start, int end, int val) {
+	// Only process if end index is >= start index
+	if (start <= end) {
 
-		// Find index of area of the last third
-		int middleRightIndex = middleLeftIndex + (endIndex - startIndex) / 3;
+		const int midLeft = start + (end - start) / 3;
 
-		// If val is at middleLeftIndex
-		// then return middleLeftIndex
-		if (arr[middleLeftIndex] == val) {
-			return middleLeftIndex;
+		const int midRight = midLeft + (end - start) / 3;
+
+		// Is midLeft value the target value?
+		if (arr[midLeft] == val) {
+			return midLeft;
 		}
-		// If val is at middleRightIndex
-		// then return middleRightIndex
-		else if (arr[middleRightIndex] == val) {
-			return middleRightIndex;
+		// Is midRight value the target value?
+		else if (arr[midRight] == val) {
+			return midRight;
 		}
-		// If val is at the are of the first third
-		// then perform another Ternary Search to this subarray
-		// arr[startIndex ... middleLeftIndex - 1]
-		else if (arr[middleLeftIndex] > val) {
-			return Ternary_Search(arr, startIndex, middleLeftIndex - 1, val);
+		// If target value smaller than midLeft value,
+		// then perform Ternary Search on left subarray
+		// arr[start, ..., (midLeft - 1)]
+		else if (arr[midLeft] > val) {
+			return Ternary_Search(arr, start, (midLeft - 1), val);
 		}
-		// If val is at the area of the last third
-		// then perform another Ternary Search to this subarray
-		// arr[middleRightIndex + 1 ... endIndex]
-		else if (arr[middleRightIndex] < val) {
-			return Ternary_Search(arr, middleRightIndex + 1, endIndex, val);
+		// If target value is greater than midRight value,
+		// then perform Ternary Search on right subarray
+		// arr[midRight + 1 ... end]
+		else if (arr[midRight] < val) {
+			return Ternary_Search(arr, (midRight + 1), end, val);
 		}
-		// The val is at the area
-		// between middleLeftIndex and middleRightIndex
-		// arr[middleLeftIndex + 1 ... middleRightIndex - 1]
+		// Target value must be in between midLeft and midRight,
+		// perform Ternary Search on subarray
+		// arr[(midLeft + 1), ..., (midRight - 1)]
 		else {
-			return Ternary_Search(arr, middleLeftIndex + 1, middleRightIndex - 1, val);
+			return Ternary_Search(arr, (midLeft + 1), (midRight - 1), val);
 		}
 	}
 
-	// Just in case no any value found
+	// Not found
 	return -1;
 }

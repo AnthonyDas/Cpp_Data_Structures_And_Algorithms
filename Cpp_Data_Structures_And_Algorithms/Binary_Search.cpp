@@ -1,30 +1,26 @@
-int Binary_Search(int arr[], int startIndex, int endIndex, int val) {
-	// Only perform searching process
-	// if the end index is higher than
-	// or equals to start index
-	if (startIndex <= endIndex) {
-		// Find middle index
-		int middleIndex = startIndex + (endIndex - startIndex) / 2;
+int Binary_Search(int arr[], const int &start, const int &end, const int &val) {
+	// Only process if end index is >= start index
+	if (start <= end) {
+		const int mid = start + (end - start) / 2;
 
-		// If the middle index's value is the searched value
-		// then return the index
-		if (arr[middleIndex] == val) {
-			return middleIndex;
+		// Is middle value the target value?
+		if (arr[mid] == val) {
+			return mid;
 		}
-		// If the middle index's value is greater than the searched value
-		// then perform another Binary Search to the left sub array
-		// arr[startIndex ... middleIndex - 1]
-		else if (arr[middleIndex] > val) {
-			return Binary_Search(arr, startIndex, middleIndex - 1, val);
+		// If the middle value is greater than target value,
+		// perform Binary Search on the left sub array
+		// arr[start, ..., (mid - 1)]
+		else if (arr[mid] > val) {
+			return Binary_Search(arr, start, (mid - 1), val);
 		}
-		// If the middle index's value is lower than the searched value
-		// then perform another Binary Search to the left sub array
-		// arr[middleIndex + 1 ... endIndex]
+		// If the middle value is lower than target value,
+		// perform Binary Search on the right sub array
+		// arr[(mid + 1), ..., end]
 		else {
-			return Binary_Search(arr, middleIndex + 1, endIndex, val);
+			return Binary_Search(arr, (mid + 1), end, val);
 		}
 	}
 
-	// Just in case no any value found
+	// Not found
 	return -1;
 }

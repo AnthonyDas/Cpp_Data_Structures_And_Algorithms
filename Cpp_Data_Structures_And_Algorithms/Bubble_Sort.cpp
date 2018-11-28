@@ -1,28 +1,26 @@
 #include "Swap.h"
 
-void Bubble_Sort(int arr[], int arrSize) {
-	// Flag for swapping element
-	bool isSwapped;
+void Bubble_Sort(int arr[], const int &arrSize) {
+	// Flag to indicate whether any elements swapped during iteration
+	bool isSwapped; 
 
-	// The value will be decreased
-	// every time one element has been sorted
+	// Decreased every time one element has been sorted
 	int unsortedElements = arrSize;
 
 	do {
-		// If there's at least two element are swapped
-		// it will be true
 		isSwapped = false;
 
 		// Iterate through the array's element
-		for (int i = 0; i < unsortedElements - 1; ++i) {
+		// NB. -1 second to last element
+		for (int i = 0; i < (unsortedElements - 1); ++i) { 
 			if (arr[i] > arr[i + 1]) {
 				swap(arr[i], arr[i + 1]);
 				isSwapped = true;
 			}
 		}
 
-		// After iteration, the last element has been sorted
-		// so it will be ignored in the next iteration
+		// Last element has been sorted so ignored it
+		// during the next iteration
 		--unsortedElements;
 	}
 	// Do comparison again if there's swapped element
