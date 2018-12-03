@@ -169,7 +169,6 @@
     <ClInclude Include="include\Node.h" />
     <ClInclude Include="include\Queue.h" />
     <ClInclude Include="include\Stack.h" />
-    <ClInclude Include="include\Swap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

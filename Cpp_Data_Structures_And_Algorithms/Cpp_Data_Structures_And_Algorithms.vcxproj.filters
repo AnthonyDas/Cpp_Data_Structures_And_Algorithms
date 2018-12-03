@@ -182,9 +182,6 @@
     <ClInclude Include="include\Queue.h">
       <Filter>Header Files\Chapter 3 - Stacks and Queues</Filter>
     </ClInclude>
-    <ClInclude Include="include\Swap.h">
-      <Filter>Header Files\Chapter 4 - Sorting</Filter>
-    </ClInclude>
     <ClInclude Include="include\Binary_Search.h">
       <Filter>Header Files\Chapter 5 - Searching</Filter>
     </ClInclude>
