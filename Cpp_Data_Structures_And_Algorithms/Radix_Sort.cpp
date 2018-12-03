@@ -3,7 +3,8 @@
 
 void RadixSort(int arr[], const int &arrSize) {
 	// Create ten buckets for digits 0 - 9
-	std::queue<int> buckets[10];
+	const int ten = 10;
+	std::queue<int> buckets[ten];
 
 	// Find the largest element
 	int largest = arr[0];
@@ -22,7 +23,7 @@ void RadixSort(int arr[], const int &arrSize) {
 		// Reconstruct the array starting from
 		// the smallest digit bucket
 		int index = 0;
-		for (int i = 0; i < 10; ++i) {
+		for (int i = 0; i < ten; ++i) {
 			while (!buckets[i].empty()) {
 				arr[index] = buckets[i].front();
 

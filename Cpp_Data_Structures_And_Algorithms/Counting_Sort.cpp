@@ -1,7 +1,7 @@
 void Counting_Sort(int arr[], const int &arrSize) {
 	// Assuming all element values
-	// are between 0 to 9 inclusive
-	const int range = 10;
+	// are between 0 to 99 inclusive
+	const int range = 100;
 
 	// Create key/counting array.
 	// Using new to allocate memory because in
