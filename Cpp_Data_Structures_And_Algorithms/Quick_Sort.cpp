@@ -1,4 +1,4 @@
-#include "Swap.h"
+#include <utility>
 
 int Partition(int arr[], const int &start, const int &end) {
 	// Set the first element as pivot
@@ -14,14 +14,14 @@ int Partition(int arr[], const int &start, const int &end) {
 
 			// arr[mid] is currently member of right subarray, swap
 			// it with current element which is member of left subarray
-			swap(arr[i], arr[mid]);
+			std::swap(arr[i], arr[mid]);
 		}
 	}
 
 	// By now, arr[mid] is member of left subarray.
 	// Swap it with pivot so the pivot will be in the correct
 	// position in between left subarray and right subarray.
-	swap(arr[start], arr[mid]);
+	std::swap(arr[start], arr[mid]);
 
 	// Return index of pivot needed by next quick sort
 	return mid;

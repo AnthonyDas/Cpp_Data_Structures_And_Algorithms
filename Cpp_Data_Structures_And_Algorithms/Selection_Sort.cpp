@@ -1,4 +1,4 @@
-#include "Swap.h"
+#include <utility>
 
 void SelectionSort(int arr[], const int &arrSize) {
 	// Index of the minimum value during each iteration
@@ -16,6 +16,6 @@ void SelectionSort(int arr[], const int &arrSize) {
 				minIndex = j;
 		}
 
-		swap(arr[i], arr[minIndex]);
+		std::swap(arr[i], arr[minIndex]);
 	}
 }

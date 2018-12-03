@@ -1,4 +1,4 @@
-#include "Swap.h"
+#include <utility>
 
 void Bubble_Sort(int arr[], const int &arrSize) {
 	// Flag to indicate whether any elements swapped during iteration
@@ -14,7 +14,7 @@ void Bubble_Sort(int arr[], const int &arrSize) {
 		// NB. -1 second to last element
 		for (int i = 0; i < (unsortedElements - 1); ++i) { 
 			if (arr[i] > arr[i + 1]) {
-				swap(arr[i], arr[i + 1]);
+				std::swap(arr[i], arr[i + 1]);
 				isSwapped = true;
 			}
 		}
