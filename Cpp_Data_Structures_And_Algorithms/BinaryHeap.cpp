@@ -1,21 +1,16 @@
 #include "BinaryHeap.h"
 
 BinaryHeap::BinaryHeap() {
-	// Clear the vector
 	vect.clear();
 
 	// Root will be index 1
 	// so we set index 0 to be 'dummy'
 	vect.push_back(-1);
 
-	// An empty Binary Heap
-	// contains no element
 	heapSize = 0;
 }
 
 bool BinaryHeap::IsEmpty() {
-	// Heap is empty if only
-	// heapSize = 0
 	return heapSize == 0;
 }
 
@@ -46,12 +41,10 @@ void BinaryHeap::Insert(int key) {
 }
 
 void BinaryHeap::ShiftDown(int i) {
-	// For non-existing index
-	// just do nothing
+	// For non-existing index just do nothing
 	if (i > heapSize)
 		return;
 
-	// Initialize swapId
 	int swapId = i;
 
 	// Compare with left child, if exists
@@ -88,6 +81,6 @@ int BinaryHeap::ExtractMax() {
 }
 
 int BinaryHeap::GetMax() {
-	// Return root's key
+	// Return root
 	return vect[1];
 }

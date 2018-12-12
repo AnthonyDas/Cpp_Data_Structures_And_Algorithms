@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+#include <cstring> // strlen
 #include "Stack.h"
 
 bool IsValid(char expression[]) {
@@ -22,10 +22,8 @@ bool IsValid(char expression[]) {
 		// Check when the input
 		// is closed parenthesis
 		else if (expression[i] == '}' || expression[i] == ']' || expression[i] == ')') {
-			// If the stack is empty
-			// or the last parenthesis is different
-			// than the one we are closed,
-			// then the expression is wrong
+			// If the stack is empty or the last parenthesis is different
+			// than the one we are closed, then the expression is wrong
 			if (expression[i] == '}' && (stackChar.IsEmpty() || stackChar.Top() != '{'))
 				return false;
 			else if (expression[i] == ']' && (stackChar.IsEmpty() || stackChar.Top() != '['))
