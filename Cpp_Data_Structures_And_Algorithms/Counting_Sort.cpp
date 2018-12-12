@@ -8,18 +8,19 @@ void Counting_Sort(int arr[], const int &arrSize) {
 	// practice won't know range in advance.
 	int* countsArray = new int[range];
 
-	// Generate the counts for the input arr elements
+	// Generate the counts for the input array elements
 	for (int i = 0; i < arrSize; ++i) {
 		++countsArray[arr[i]];
 	}
 
-	int index = 0;
+	int write_index = 0;
 
+	// Write the elements back to original array
 	for (int i = 0; i < range; ++i) {
 		while (countsArray[i] > 0) {
-			arr[index] = i;
+			arr[write_index] = i;
 
-			++index;
+			++write_index;
 			--countsArray[i];
 		}
 	}

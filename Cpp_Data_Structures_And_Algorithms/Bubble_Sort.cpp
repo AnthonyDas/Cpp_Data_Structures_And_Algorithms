@@ -27,4 +27,3 @@ void Bubble_Sort(int arr[], const int &arrSize) {
 	// otherwise, all array's elements have been sorted
 	while (isSwapped); // do-while
 }
-

@@ -51,7 +51,7 @@ void Merge(int arr[], const int &start, const int &mid, const int &end) {
 }
 
 void MergeSort(int arr[], const int &start, const int &end) {
-	// Only makes sense to sort >1 element
+	// Only makes sense if sorting more than 1 element
 	if (start < end) {
 
 		const int mid = (start + end) / 2;
@@ -62,7 +62,6 @@ void MergeSort(int arr[], const int &start, const int &end) {
 		// Sort right subarray arr[(mid + 1), ..., end]
 		MergeSort(arr, (mid + 1), end);
 
-		// Merge subarrays
 		Merge(arr, start, mid, end);
 	}
 }
