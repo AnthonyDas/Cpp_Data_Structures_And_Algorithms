@@ -1,21 +1,16 @@
 #include "BinaryHeap.h"
 
 BinaryHeap::BinaryHeap() {
-	// Clear the vector
 	vect.clear();
 
-	// Root will be index 1
-	// so we set index 0 to be 'dummy'
+	// Root will be index 1,
+	// set index 0 to be 'dummy'
 	vect.push_back(-1);
 
-	// An empty Binary Heap
-	// contains no element
 	heapSize = 0;
 }
 
 bool BinaryHeap::IsEmpty() {
-	// Heap is empty if only
-	// heapSize = 0
 	return heapSize == 0;
 }
 
@@ -25,7 +20,6 @@ void BinaryHeap::ShiftUp(int index) {
 		return;
 
 	if (vect[index] > vect[p(index)]) {
-		// Swap Upwards
 		std::swap(vect[index], vect[p(index)]);
 
 		// Recurse until root
@@ -41,13 +35,11 @@ void BinaryHeap::Insert(int key) {
 	// Store the key in the vector last position
 	vect[++heapSize] = key;
 
-	// Shift upwards
 	ShiftUp(heapSize);
 }
 
 void BinaryHeap::ShiftDown(int i) {
-	// For non-existing index
-	// just do nothing
+	// Check index
 	if (i > heapSize)
 		return;
 
@@ -55,7 +47,7 @@ void BinaryHeap::ShiftDown(int i) {
 	int swapId = i;
 
 	// Compare with left child, if exists
-	if (l(i) <= heapSize && vect[i] < vect[l(i)])
+	if (l(i) <= heapSize && vect[swapId] < vect[l(i)])
 		swapId = l(i);
 
 	// Compare with right child, if exists
@@ -68,14 +60,14 @@ void BinaryHeap::ShiftDown(int i) {
 		// of the two children
 		std::swap(vect[i], vect[swapId]);
 
-		// Recurse until the index
+		// Recurse downward
 		ShiftDown(swapId);
 	}
 }
 
 int BinaryHeap::ExtractMax() {
 	// Maximum value is in root
-	int maxVal = vect[1];
+	const int maxVal = vect[1];
 
 	// Swap with the last existing leaf
 	std::swap(vect[1], vect[heapSize--]);
@@ -83,11 +75,10 @@ int BinaryHeap::ExtractMax() {
 	// Fix heap property downwards
 	ShiftDown(1);
 
-	// Return the maximum value
 	return maxVal;
 }
 
 int BinaryHeap::GetMax() {
-	// Return root's key
+	// Return root
 	return vect[1];
 }
