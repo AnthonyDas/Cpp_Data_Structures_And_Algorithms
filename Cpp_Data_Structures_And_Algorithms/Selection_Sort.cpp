@@ -1,4 +1,4 @@
-#include <utility>
+#include <utility> // std::swap
 
 void SelectionSort(int arr[], const int &arrSize) {
 	// Iterate until the second to last element

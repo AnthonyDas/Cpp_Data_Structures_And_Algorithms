@@ -1,4 +1,4 @@
-#include <utility>
+#include <utility> // std::swap
 
 void Bubble_Sort(int arr[], const int &arrSize) {
 	// Flag to indicate whether any elements swapped during iteration
@@ -19,8 +19,7 @@ void Bubble_Sort(int arr[], const int &arrSize) {
 			}
 		}
 
-		// Last element has been sorted so ignored it
-		// during the next iteration
+		// Last element has been sorted
 		--unsortedElements;
 	}
 	// Do comparison again if there's swapped element

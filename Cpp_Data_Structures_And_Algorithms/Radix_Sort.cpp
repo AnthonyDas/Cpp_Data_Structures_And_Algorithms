@@ -2,6 +2,8 @@
 #include <queue>
 
 void RadixSort(int arr[], const int &arrSize) {
+	if (arrSize <= 0) { return; }
+
 	// Create ten buckets for digits 0 - 9
 	constexpr int ten = 10;
 	std::queue<int> buckets[ten];
@@ -15,7 +17,7 @@ void RadixSort(int arr[], const int &arrSize) {
 	// Iterate through every digit using exponetial
 	// (10^exp) to find the next digit
 	for (int exp = 1; (largest / exp) > 0; exp *= 10) {
-		// Iterate through array moving element into respective bucket
+		// Iterate through array moving elements into respective bucket
 		for (int i = 0; i < arrSize; ++i) {
 			buckets[(arr[i] / exp) % 10].push(arr[i]); // enqueue
 		}

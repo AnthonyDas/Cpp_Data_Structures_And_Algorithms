@@ -1,4 +1,4 @@
-#include <utility>
+#include <utility> // std::swap
 
 int Partition(int arr[], const int &start, const int &end) {
 	// Set the first element as pivot
@@ -31,7 +31,7 @@ void QuickSort(int arr[], const int &start, const int &end) {
 	// Only makes sense if sorting more than 1 element
 	if (start < end) {
 
-		// PivotIndex is index of element already in correct position
+		// PivotIndex marks element already in correct position
 		const int pivotIndex = Partition(arr, start, end);
 
 		// Sort left subarray arr[start, ..., (pivotIndex - 1)]
