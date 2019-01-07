@@ -1,11 +1,11 @@
-int Interpolation_Search(int arr[], int start, int end, int val) {
+int Interpolation_Search(int arr[], const int &start, const int &end, const int &val) {
 	// Only process if start index <= end index
 	if (start <= end) {
 
 		// mid = start + (diff in value) * (range in index) / (range in value)
-		int mid = start + ((val - arr[start]) * (end - start) / (arr[end] - arr[start]));
+		const int mid = start + ((val - arr[start]) * (end - start) / (arr[end] - arr[start]));
 
-		// Is the middle value is the target value?
+		// Is middle value the target value?
 		if (arr[mid] == val) {
 			return mid;
 		}

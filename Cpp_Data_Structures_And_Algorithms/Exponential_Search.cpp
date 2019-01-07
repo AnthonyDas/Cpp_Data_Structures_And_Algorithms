@@ -1,14 +1,13 @@
 #include <algorithm> // min
 #include "Binary_Search.h"
 
-int Exponential_Search(int arr[], const int & arrSize, const int &val) {
+int Exponential_Search(int arr[], const int &arrSize, const int &val) {
     // Impossible to search over empty arr
     if (arrSize <= 0) {
         return -1;
     }
 
-    // Start comparing from index 1.
-	// Will multiply by 2, so cannot start from zero
+    // Start at 1. Will multiply by 2, so cannot start from zero
     int blockIndex = 1;
 
     // Increase blockIndex exponentially if:

@@ -1,4 +1,4 @@
-int Ternary_Search(int arr[], int start, int end, int val) {
+int Ternary_Search(int arr[], const int &start, const int &end, const int &val) {
 	// Only process if start index <= end index
 	if (start <= end) {
 
@@ -22,7 +22,7 @@ int Ternary_Search(int arr[], int start, int end, int val) {
 		}
 		// If target value is greater than right value,
 		// then perform Ternary Search on right subarray
-		// arr[right + 1 ... end]
+		// arr[(right + 1), ..., end]
 		else if (arr[right] < val) {
 			return Ternary_Search(arr, (right + 1), end, val);
 		}
