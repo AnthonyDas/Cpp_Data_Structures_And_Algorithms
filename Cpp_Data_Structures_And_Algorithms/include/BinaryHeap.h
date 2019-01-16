@@ -13,7 +13,7 @@ public:
     BinaryHeap();
 
     bool IsEmpty();
-    void Insert(int key);
+    void Insert(const int&);
     int ExtractMax();
     int GetMax();
 

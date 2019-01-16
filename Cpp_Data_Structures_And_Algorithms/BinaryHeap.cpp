@@ -1,13 +1,13 @@
+#include <utility> // std::swap
+
 #include "BinaryHeap.h"
 
-BinaryHeap::BinaryHeap() {
-	vect.clear();
+BinaryHeap::BinaryHeap() : heapSize(0) {
+	// vect.clear();
 
 	// Root will be index 1,
 	// set index 0 to be 'dummy'
 	vect.push_back(-1);
-
-	heapSize = 0;
 }
 
 bool BinaryHeap::IsEmpty() {
@@ -27,12 +27,12 @@ void BinaryHeap::ShiftUp(int index) {
 	}
 }
 
-void BinaryHeap::Insert(int key) {
+void BinaryHeap::Insert(const int &key) {
 	// Add a new element in vector
 	if (heapSize + 1 >= (int)vect.size())
 		vect.push_back(0);
 
-	// Store the key in the vector last position
+	// Store the key in the last position
 	vect[++heapSize] = key;
 
 	ShiftUp(heapSize);
