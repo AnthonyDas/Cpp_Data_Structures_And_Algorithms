@@ -24,8 +24,8 @@ private:
     int l(int i) { return i<<1; } // Left-child i*2
     int r(int i) { return (i<<1) + 1; } // Right-child (i*2) + 1
 
-    void ShiftUp(int index);
-    void ShiftDown(int i);
+    void ShiftUp(const int &);
+    void ShiftDown(const int &);
 };
 
 #endif // BINARYHEAP_H

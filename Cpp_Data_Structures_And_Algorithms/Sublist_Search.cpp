@@ -3,7 +3,7 @@
 
 template <typename T>
 void PrintNode(Node<T> * node) {
-	while (node != nullptr) {
+	while (node) {
 		std::cout << node->Value << " -> ";
 		node = node->Next;
 	}

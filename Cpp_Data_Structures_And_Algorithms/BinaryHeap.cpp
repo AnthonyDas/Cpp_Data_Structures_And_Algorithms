@@ -14,7 +14,7 @@ bool BinaryHeap::IsEmpty() {
 	return heapSize == 0;
 }
 
-void BinaryHeap::ShiftUp(int index) {
+void BinaryHeap::ShiftUp(const int &index) {
 	// Do nothing in root
 	if (index == 1)
 		return;
@@ -29,6 +29,7 @@ void BinaryHeap::ShiftUp(int index) {
 
 void BinaryHeap::Insert(const int &key) {
 	// Add a new element in vector
+	// +1 for 'dummy' in index 0
 	if (heapSize + 1 >= (int)vect.size())
 		vect.push_back(0);
 
@@ -38,11 +39,7 @@ void BinaryHeap::Insert(const int &key) {
 	ShiftUp(heapSize);
 }
 
-void BinaryHeap::ShiftDown(int i) {
-	// Check index
-	if (i > heapSize)
-		return;
-
+void BinaryHeap::ShiftDown(const int &i) {
 	// Initialize swapId
 	int swapId = i;
 
@@ -66,6 +63,10 @@ void BinaryHeap::ShiftDown(int i) {
 }
 
 int BinaryHeap::ExtractMax() {
+	if (!heapSize) {
+		return -1;
+	}
+
 	// Maximum value is in root
 	const int maxVal = vect[1];
 
@@ -79,6 +80,10 @@ int BinaryHeap::ExtractMax() {
 }
 
 int BinaryHeap::GetMax() {
+	if (!heapSize) {
+		return -1;
+	}
+
 	// Return root
 	return vect[1];
 }
